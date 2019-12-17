@@ -1,0 +1,64 @@
+body{
+    background: #000428;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+color: white;
+margin: 0 auto;
+}
+
+#card-id{
+    width: 12rem;
+    margin: 10px;
+}
+
+#img-navbar{
+    width: 100px;
+}
+
+#jumbotron-home{
+    margin: 40px 40px 40px 40px;
+    background-color: rgb(26, 25, 25);
+}
+
+#form-login-id{
+    margin: 50px 200px 200px 200px;
+	text-align: center;
+	position: relative;
+}
+
+#form-register-id{
+    margin: 50px 200px 200px 200px;
+	text-align: center;
+	position: relative;
+}
+
+#title-movies-card{
+    font-size: 20px;
+}
+
+#card-id-single-movie{
+    color: black
+}
+
+#card-user-id{
+    width: 18rem;
+    margin: 10px;
+    color: black
+}
+
+#text-dont-movies{
+    margin: 40px 40px 40px 40px;
+}
+
+#user-profile{
+    margin: 40px 40px 40px 40px;
+    background-color: rgb(26, 25, 25) ;
+}
+
+#single-movie-id{
+  width: 20rem;
+}
+
+#navbar{
+    align-content: space-between;
+}
