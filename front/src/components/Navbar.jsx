@@ -18,7 +18,7 @@ export default (props) => (
         </div>
         <div>
             {props.user.email &&
-                <Link className="navbar-brand" to="/user">{props.user.email}</Link>
+                <Link className="navbar-brand" to="/user">{props.user.name}</Link>
             }
             {props.user.email &&
                 <Link onClick={props.logout} className="navbar-brand" to="/">Logout</Link>

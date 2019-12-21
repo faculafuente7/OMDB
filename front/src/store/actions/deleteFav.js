@@ -9,11 +9,9 @@ export function deleteFav(fav) {
 }
 
 
-export const deleteFavorites = (movie, userId) => dispatch => {
-    console.log("ESTOY EN EL AXIOS PERROOOO", movie.imdbID, userId)
-    axios.post('/api/delete', { imdbId: movie.imdbID, userId: userId })
+export const deleteFavorites = (movie, movieId, userId) => dispatch => {
+    axios.post('/api/delete', { imdbId: movieId, userId: userId })
         .then(res => {
-            console.log(res.data)
             return dispatch(deleteFav(movie))
         })
 

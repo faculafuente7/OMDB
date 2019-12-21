@@ -47336,7 +47336,7 @@ var Home = function Home(_ref) {
     className: "jumbotron"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "display-4"
-  }, "Hello, ", user.email, "!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, "Hello, ", user.name, "!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "lead"
   }, "OMDB APP IS THE FREE DEMAND VIDEO PLATFORM TO SEE ALL CONTENTS WHERE YOU WANT, WHEN YOU WANT. THE FILMS AND SERIES, DOCUMENTS AND SHORTS, NEW LOOKS AND CLASSICS OF ALWAYS TO ENJOY THEM FROM ANY DEVICE."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
     className: "my-4"
@@ -47475,7 +47475,7 @@ __webpack_require__.r(__webpack_exports__);
   }, "Home"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.user.email && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "navbar-brand",
     to: "/user"
-  }, props.user.email), props.user.email && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, props.user.name), props.user.email && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     onClick: props.logout,
     className: "navbar-brand",
     to: "/"
@@ -48399,9 +48399,9 @@ function (_React$Component) {
   }, {
     key: "delFavorites",
     value: function delFavorites(movie) {
-      console.log("LLEGUE AL DEL FAVORITES");
-      var userId = this.props.user.id;
-      _store_index__WEBPACK_IMPORTED_MODULE_3__["default"].dispatch(Object(_store_actions_deleteFav__WEBPACK_IMPORTED_MODULE_5__["deleteFavorites"])(movie, userId));
+      var userID = this.props.user.id;
+      var movieId = movie.imdbID;
+      _store_index__WEBPACK_IMPORTED_MODULE_3__["default"].dispatch(Object(_store_actions_deleteFav__WEBPACK_IMPORTED_MODULE_5__["deleteFavorites"])(movie, movieId, userID));
     }
   }, {
     key: "render",
@@ -48510,8 +48510,9 @@ function (_React$Component) {
   }, {
     key: "onClick",
     value: function onClick(movie) {
-      var userID = this.props.user.id;
-      _store_index__WEBPACK_IMPORTED_MODULE_2__["default"].dispatch(Object(_store_actions_deleteFav__WEBPACK_IMPORTED_MODULE_4__["deleteFavorites"])(movie, userID));
+      var userId = this.props.user.id;
+      var movieId = movie.imdbId;
+      _store_index__WEBPACK_IMPORTED_MODULE_2__["default"].dispatch(Object(_store_actions_deleteFav__WEBPACK_IMPORTED_MODULE_4__["deleteFavorites"])(movie, movieId, userId));
     }
   }, {
     key: "render",
@@ -48602,14 +48603,12 @@ function deleteFav(fav) {
     favorites: fav
   };
 }
-var deleteFavorites = function deleteFavorites(movie, userId) {
+var deleteFavorites = function deleteFavorites(movie, movieId, userId) {
   return function (dispatch) {
-    console.log("ESTOY EN EL AXIOS PERROOOO", movie.imdbID, userId);
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/delete', {
-      imdbId: movie.imdbID,
+      imdbId: movieId,
       userId: userId
     }).then(function (res) {
-      console.log(res.data);
       return dispatch(deleteFav(movie));
     });
   };

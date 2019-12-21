@@ -17,7 +17,7 @@ THE FILMS AND SERIES, DOCUMENTS AND SHORTS, NEW LOOKS AND CLASSICS OF ALWAYS TO 
             }
             {user.email &&
                 <div id="jumbotron-home" className="jumbotron">
-                    <h1 className="display-4">Hello, {user.email}!</h1>
+                    <h1 className="display-4">Hello, {user.name}!</h1>
                     <p className="lead">OMDB APP IS THE FREE DEMAND VIDEO PLATFORM TO SEE ALL CONTENTS WHERE YOU WANT, WHEN YOU WANT.
 THE FILMS AND SERIES, DOCUMENTS AND SHORTS, NEW LOOKS AND CLASSICS OF ALWAYS TO ENJOY THEM FROM ANY DEVICE.</p>
                     <hr className="my-4"></hr>

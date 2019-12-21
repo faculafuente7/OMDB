@@ -27,10 +27,10 @@ class SingleMovieContainer extends React.Component {
     }
 
     delFavorites(movie) {
-        console.log("LLEGUE AL DEL FAVORITES")
-        const userId = this.props.user.id
+        const userID = this.props.user.id
+        const movieId = movie.imdbID
 
-        store.dispatch(deleteFavorites(movie, userId))
+        store.dispatch(deleteFavorites(movie, movieId, userID))
     }
 
     render() {

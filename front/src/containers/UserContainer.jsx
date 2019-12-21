@@ -19,8 +19,9 @@ class UserContainer extends React.Component {
     }
 
     onClick(movie) {
-        let userID = this.props.user.id
-        store.dispatch(deleteFavorites(movie, userID))
+        let userId = this.props.user.id
+        const movieId = movie.imdbId
+        store.dispatch(deleteFavorites(movie, movieId, userId))
     }
 
     render() {

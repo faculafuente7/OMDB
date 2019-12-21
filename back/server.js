@@ -12,8 +12,8 @@ const DIST_DIR = path.join(__dirname, "../back/public");
 const users = require('./routes/users')
 
 
-app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cookieParser());
 
